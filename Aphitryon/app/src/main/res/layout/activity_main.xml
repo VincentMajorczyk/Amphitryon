@@ -34,14 +34,12 @@
         android:layout_marginTop="16dp"/>
 
     <!-- Bouton de connexion -->
-    <!--
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Se connecter"
         android:layout_marginTop="24dp"
-        android:background="@color/colorPrimary"/>
-    -->
+/>
 
 
     <!-- Lien pour l'inscription -->
