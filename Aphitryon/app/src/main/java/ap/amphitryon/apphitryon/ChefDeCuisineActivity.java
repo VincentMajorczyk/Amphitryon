@@ -11,4 +11,6 @@ public class ChefDeCuisineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_de_cuisine);
     }
+
+
 }

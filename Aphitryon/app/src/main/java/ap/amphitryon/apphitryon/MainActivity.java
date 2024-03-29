@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public  void onResponse(Call call, Response response) throws IOException {
 
                 responseStr = response.body().string();
-
+                Log.d("Test",responseStr);
                 if (responseStr.compareTo("false")!=0){
                     try {
                         JSONObject etudiant = new JSONObject(responseStr);
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     catch(JSONException e){
+                        Log.d("Test",e.getMessage());
                         // Toast.makeText(MainActivity.this, "Erreur de connexion !!!! !", Toast.LENGTH_SHORT).show();
                     }
                 } else {
