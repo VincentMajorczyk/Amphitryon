@@ -41,6 +41,16 @@ public class ChefDeCuisineActivity extends AppCompatActivity {
             }
         });
 
+        final Button btnPlats = (Button)findViewById(R.id.btnPlats);
+        btnPlats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Appel de la fonction authentification
+                Intent intent = new Intent(ChefDeCuisineActivity.this, PlatsPlat.class);
+                Log.d("Test","chefCuisinier");
+                startActivity(intent);
+            }
+        });
 
     }
 }

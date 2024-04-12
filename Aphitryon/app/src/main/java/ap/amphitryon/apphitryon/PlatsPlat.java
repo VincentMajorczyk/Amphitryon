@@ -2,6 +2,7 @@ package ap.amphitryon.apphitryon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,16 +24,30 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class EntrerPlat extends AppCompatActivity {
+public class PlatsPlat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_entrer_plat);
+        setContentView(R.layout.activity_plats_plat);
+
+
+        final Button btnquitter = (Button) findViewById(R.id.btnQuitter);
+        btnquitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PlatsPlat.this.finish();
+            }
+        });
+
+
+
+
+
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/afficherEntrees.php")
+                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/afficherPlats.php")
                 .build();
-        ArrayList arrayListEntree = new ArrayList<String>();
+        ArrayList arrayListPlat = new ArrayList<String>();
         OkHttpClient client = new OkHttpClient();
 
         Call call = client.newCall(request);
@@ -49,12 +64,12 @@ public class EntrerPlat extends AppCompatActivity {
                         Log.d("Test","erreur!!! connexion impossible");
                         JSONObject jsonClasse = null;
                         jsonClasse = jsonArrayClasses.getJSONObject(i);
-                        arrayListEntree.add(jsonClasse.getString("NOMPLAT"));
+                        arrayListPlat.add(jsonClasse.getString("NOMPLAT"));
                     }
-                    ListView listViewClasse = findViewById(R.id.lstEntrer);
+                    ListView listViewClasse = findViewById(R.id.lstPlat);
                     ArrayAdapter<String> arrayAdapterClasse = new
-                            ArrayAdapter<String>(EntrerPlat.this,
-                            android.R.layout.simple_list_item_1, arrayListEntree);
+                            ArrayAdapter<String>(PlatsPlat.this,
+                            android.R.layout.simple_list_item_1, arrayListPlat);
                     runOnUiThread(()->{
                         listViewClasse.setAdapter(arrayAdapterClasse);
                     });
@@ -69,22 +84,6 @@ public class EntrerPlat extends AppCompatActivity {
             }
         });
 
-        final Button btnCreerEntree = (Button)findViewById(R.id.btncreeEntree);
-        btnCreerEntree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Appel de la fonction authentification
-                Intent intent = new Intent(EntrerPlat.this, FomulaireCreeEntree.class);
-                startActivity(intent);
-            }
-        });
 
-        final Button btnquitter = (Button) findViewById(R.id.btnQuitter);
-        btnquitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EntrerPlat.this.finish();
-            }
-        });
     }
 }
