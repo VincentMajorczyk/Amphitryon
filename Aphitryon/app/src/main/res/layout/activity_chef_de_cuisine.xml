@@ -6,4 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".ChefDeCuisineActivity">
 
+    <Button
+        android:id="@+id/btnEntrée"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrée"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnPlats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plats"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrée"
+        app:layout_constraintBottom_toTopOf="@+id/btnDessert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnDessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dessert"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/lblChefCuisiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Chef cuisto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

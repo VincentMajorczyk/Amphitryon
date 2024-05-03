@@ -6,8 +6,8 @@ require_once '../modeles/dao/UtilisateurDAO.php';
 
 
 
-//$_POST['login'] ="Tourmichmich45@gmail.com" ;
-//$_POST['mdp'] = "tour123";
+//$_POST['login'] = "bob" ;
+//$_POST['mdp'] = "bob";
 
 
 
