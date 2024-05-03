@@ -1,6 +1,5 @@
 <?php
 class TableDAO{
-
     public static function afficherTables(){
 		try{
 			$sql = "select * 
@@ -25,13 +24,10 @@ class TableDAO{
 			$requetePrepa->bindParam("nbPlace", $nbPlace);
 			$requetePrepa->execute();
 		}
-		}catch(Exception $e){
+		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
 	}
-
-
-
 
 	public static function deleteTables($date, $idService, $nomTable){
 		try{
@@ -42,7 +38,7 @@ class TableDAO{
 			$requetePrepa->bindParam("nomTable", $nomTable);
 			$requetePrepa->execute();
 		}
-		}catch(Exception $e){
+		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
 	}
@@ -58,9 +54,16 @@ class TableDAO{
 			$requetePrepa->bindParam("nbPlace", $nbPlace);
 			$requetePrepa->execute();
 		}
-		}catch(Exception $e){
+		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
 	}
 	
+
+
+
+
+
+
+
 }

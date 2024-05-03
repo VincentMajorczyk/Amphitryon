@@ -6,3 +6,4 @@ class Param {
 	public static $dsn = 'mysql:host=localhost;dbname=kremy_Amphitryon;charset=utf8';
 	
 }
+?>

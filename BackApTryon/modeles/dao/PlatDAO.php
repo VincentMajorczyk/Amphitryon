@@ -55,6 +55,15 @@ class PlatDAO{
 		return $reponse;
 	}
 
-
+	public static function creeplats($idcatplat, $nom, $descriptif){
+			$requetePrepa = DBConnex::getInstance()->prepare("INSERT INTO PLAT(IDCATEGPLAT, NOMPLAT, DESCRIPTIF) VALUES (:idcatplat, :nom,:descriptif) ") ;
+			$requetePrepa -> bindParam(':idcatplat', $idcatplat);
+			$requetePrepa -> bindParam(':nom', $nom);
+			$requetePrepa -> bindParam(':descriptif', $descriptif);
+			
+			return $requetePrepa->execute();
+	}
+	
+	
     
 }
