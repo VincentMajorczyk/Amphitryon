@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                         if(etudiant.getString("POSTE").compareTo("Serveur")==0) {
-                            Intent intent = new Intent(MainActivity.this, ServeurActivity.class);
+                            Intent intent = new Intent(MainActivity.this, ChefDeSalleActivity.class);
                             intent.putExtra("utilisateur", etudiant.toString());
                             Log.d("Test","Serveur");
                             startActivity(intent);

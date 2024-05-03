@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ChefDeSalleActivity">
 
+
+    <Button
+        android:id="@+id/btnLesTables"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:text="Les Tables"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="122dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
