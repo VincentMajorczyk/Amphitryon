@@ -95,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            public void onFailure(Call call, IOException e)
-            {
-                Log.d("Test","erreur!!! connexion impossible");
+            public void onFailure(Call call, IOException e) {
+                Log.d("Test", "Erreur lors de la connexion : " + e.getMessage()); // Enregistrement de l'erreur dans les journaux
+                e.printStackTrace(); // Affichage de la pile d'appels pour obtenir plus d'informations sur l'erreur
             }
 
         });

@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".DessertPlat">
 
+    <ListView
+        android:id="@+id/lstDessert"
+        android:layout_width="412dp"
+        android:layout_height="637dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-1dp">
+
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btnQuitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quitter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
