@@ -8,3 +8,4 @@ require_once '../modeles/dao/PlatDAO.php';
 
 
 print(json_encode(PlatDAO::entrees()));
+

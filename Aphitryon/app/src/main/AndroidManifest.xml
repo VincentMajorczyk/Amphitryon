@@ -44,6 +44,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".AfficherTableActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ServeurActivity"
             android:exported="false">
             <meta-data
