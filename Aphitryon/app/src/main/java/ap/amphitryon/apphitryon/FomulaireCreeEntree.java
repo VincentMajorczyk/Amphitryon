@@ -55,7 +55,7 @@ public class FomulaireCreeEntree extends AppCompatActivity {
 
         Log.d("Test", formBody.toString());
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/creePlats.php")
+                .url("http://192.168.1.76/BackApTryon/controleurs/creePlats.php")
                 .post(formBody)
                 .build();
 

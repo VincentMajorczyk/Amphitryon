@@ -30,7 +30,7 @@ public class EntrerPlat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrer_plat);
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/afficherEntrees.php")
+                .url("http://192.168.1.76/BackApTryon/controleurs/afficherEntrees.php")
                 .build();
         ArrayList arrayListEntree = new ArrayList<String>();
         OkHttpClient client = new OkHttpClient();

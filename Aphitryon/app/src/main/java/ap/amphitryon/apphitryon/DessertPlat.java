@@ -30,7 +30,7 @@ public class DessertPlat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dessert_plat);
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/afficherDesserts.php")
+                .url("http://192.168.1.76/BackApTryon/controleurs/afficherDesserts.php")
                 .build();
         ArrayList arrayListDessert = new ArrayList<String>();
         OkHttpClient client = new OkHttpClient();

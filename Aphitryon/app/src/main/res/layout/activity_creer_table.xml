@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Création de table"
+        android:layout_marginBottom="100dp"
+    />
+    <TextView
+        android:id="@+id/lblDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date (AAAA/MM/JJ)"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/tbxDate"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+
+    />
+
+    <TextView
+        android:id="@+id/lblService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service"
+        android:layout_marginTop="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerService"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblNomTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom de la table"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/tbxNomTable"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+
+        />
+
+    <TextView
+        android:id="@+id/lblNbPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de place"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/tbxNbPlace"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+
+        />
+
+    <Button
+        android:id="@+id/btnConfirmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmer"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retour" />
+
+
+
+</LinearLayout>

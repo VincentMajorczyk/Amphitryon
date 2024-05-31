@@ -13,20 +13,20 @@ class TableDAO{
 		return $reponse;
 	}
 
-	public static function ajouterTables(){
+	public static function ajouterTables($date, $idService, $nomTable, $nbPlace){
 		try{
-			$sql = "INSERT INTO TABLEE VALUES (:date, :idService, :idUtilisateur, :nbPlace);" ;
+			$sql = "INSERT INTO TABLEE (DATEE, IDSERVICE, NOMTABLE, NBPLACE) VALUES (:date, :idService, :nomTable, :nbPlace);" ;
 			$requetePrepa = DBConnex::getInstance()->prepare($sql);
 			$requetePrepa->bindParam("date", $date);
 			$requetePrepa->bindParam("idService", $idService);
 			$requetePrepa->bindParam("nomTable", $nomTable);
-			$requetePrepa->bindParam("idUtilisateur", $idUtilisateur);
 			$requetePrepa->bindParam("nbPlace", $nbPlace);
 			$requetePrepa->execute();
 		}
 		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
+		return $reponse;
 	}
 
 	public static function deleteTables($date, $idService, $nomTable){
@@ -37,26 +37,30 @@ class TableDAO{
 			$requetePrepa->bindParam("idService", $idService);
 			$requetePrepa->bindParam("nomTable", $nomTable);
 			$requetePrepa->execute();
+			$reponse = 1;
 		}
 		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
+		return $reponse;
 	}
 
-	public static function modifTables($idService, $nomTable, $idUtilisateur, $nbPlace){
+	public static function modifTables($date, $idService, $nomTable, $nbPlace){
 		try{
-			$sql = "UPDATE TABLEE SET DATEE = :date, IDSERVICE = :idService, NOMTABLE = :nomTable, IDUTILISATEUR = :idUtilisateur, NBPLACE = :nbPlace" ;
+			$sql = "UPDATE TABLEE SET DATEE = :date, IDSERVICE = :idService, NOMTABLE = :nomTable, NBPLACE = :nbPlace WHERE DATEE = :date AND NOMTABLE = :nomTable AND IDSERVICE = :idService" ;
 			$requetePrepa = DBConnex::getInstance()->prepare($sql);
 			$requetePrepa->bindParam("date", $date);
 			$requetePrepa->bindParam("idService", $idService);
 			$requetePrepa->bindParam("nomTable", $nomTable);
-			$requetePrepa->bindParam("idUtilisateur", $idUtilisateur);
 			$requetePrepa->bindParam("nbPlace", $nbPlace);
 			$requetePrepa->execute();
+			$reponse = 1;
 		}
 		catch(Exception $e){
 			$reponse = $e->getMessage();
 		}
+		return $reponse;
+
 	}
 	
 

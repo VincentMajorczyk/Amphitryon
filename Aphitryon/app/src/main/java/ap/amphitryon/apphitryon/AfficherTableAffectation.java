@@ -1,7 +1,5 @@
 package ap.amphitryon.apphitryon;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,39 +29,24 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class AfficherTableActivity extends AppCompatActivity {
+public class AfficherTableAffectation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_afficher_table);
+        setContentView(R.layout.activity_afficher_table_affectation);
         try {
             listeTables();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        final Button btnCreer = (Button)findViewById(R.id.btnCreer);
-        btnCreer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Appel de la fonction authentification
-                Intent intent = new Intent(AfficherTableActivity.this, CreerTableActivity.class);
-                startActivity(intent);
-            }
-        });
         final Button btnQuitter = (Button) findViewById(R.id.btnQUitter);
         btnQuitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AfficherTableActivity.this.finish();
+                AfficherTableAffectation.this.finish();
             }
         });
-
-
-
-
-
-
     }
 
     public void listeTables() throws IOException {
@@ -79,14 +68,12 @@ public class AfficherTableActivity extends AppCompatActivity {
                     for (int i = 0; i < jsonArraytables.length(); i++) {
                         JSONObject jsonClasse = null;
                         jsonClasse = jsonArraytables.getJSONObject(i);
-                        arrayListTables.add("Nom : "+jsonClasse.getString("NOMTABLE") +
-                                                                "\n"+ "Nombre de places : " + jsonClasse.getString("NBPLACE")
-                                                                + "\n"+ "Date : " + jsonClasse.getString("DATEE")
-                                                                + "\n"+ "Service : " + jsonClasse.getString("IDSERVICE"));
+                        arrayListTables.add("Nom : " + jsonClasse.getString("NOMTABLE") +
+                                "\n" + "Serveur : " + jsonClasse.getString("IDUTILISATEUR"));
                     }
                     ListView listViewTable = findViewById(R.id.listViewTable);
                     ArrayAdapter<String> arrayAdapterClasse = new
-                            ArrayAdapter<String>(AfficherTableActivity.this,
+                            ArrayAdapter<String>(AfficherTableAffectation.this,
                             android.R.layout.simple_list_item_1, arrayListTables);
                     runOnUiThread(() -> {
                         listViewTable.setAdapter(arrayAdapterClasse);
@@ -94,10 +81,10 @@ public class AfficherTableActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 String selectedItem = (String) parent.getItemAtPosition(position);
-                                Intent intent = new Intent(AfficherTableActivity.this, ModifierTableActivity.class);
+                                Intent intent = new Intent(AfficherTableAffectation.this, ModifierTableActivity.class);
                                 intent.putExtra("itemClicked", selectedItem);
                                 startActivity(intent);
-                                Toast.makeText(AfficherTableActivity.this, "Vous avez cliqué sur l'élément: " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AfficherTableAffectation.this, "Vous avez cliqué sur l'élément: " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
                             }
                         });
                     });
@@ -109,9 +96,6 @@ public class AfficherTableActivity extends AppCompatActivity {
             public void onFailure(Call call, IOException e) {
                 Log.d("Test", "erreur!!! connexion e");
             }
-
-
-
         });
     }
 }

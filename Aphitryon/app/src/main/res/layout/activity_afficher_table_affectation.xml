@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AfficherTableActivity">
+    tools:context=".AfficherTableAffectation">
 
     <ListView
         android:id="@+id/listViewTable"
@@ -14,23 +14,12 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 
-    <Button
-        android:id="@+id/btnCreer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/listViewTable"
-        app:layout_constraintRight_toLeftOf="@id/btnQUitter"
-        android:text="Créer"
-        android:layout_marginStart="50dp"
-        tools:ignore="MissingConstraints"
-        />
 
     <Button
         android:id="@+id/btnQUitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/listViewTable"
-        app:layout_constraintLeft_toRightOf="@id/btnCreer"
         android:layout_marginStart="50dp"
         android:text="Quitter"
         tools:ignore="MissingConstraints" />

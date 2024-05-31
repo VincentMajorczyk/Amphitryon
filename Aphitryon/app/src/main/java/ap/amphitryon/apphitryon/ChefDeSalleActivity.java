@@ -39,6 +39,15 @@ public class ChefDeSalleActivity extends AppCompatActivity {
             }
         });
 
+        final Button btnLesAffectation = (Button)findViewById(R.id.btnLesAffectations);
+        btnLesAffectation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChefDeSalleActivity.this, AfficherTableAffectation.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

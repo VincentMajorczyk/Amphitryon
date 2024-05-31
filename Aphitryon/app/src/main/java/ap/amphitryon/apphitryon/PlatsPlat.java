@@ -45,7 +45,7 @@ public class PlatsPlat extends AppCompatActivity {
 
 
         Request request = new Request.Builder()
-                .url("http://10.100.0.6/~mnicolas/BackApTryon/controleurs/afficherPlats.php")
+                .url("http://192.168.1.76/BackApTryon/controleurs/afficherPlats.php")
                 .build();
         ArrayList arrayListPlat = new ArrayList<String>();
         OkHttpClient client = new OkHttpClient();
